@@ -13,15 +13,22 @@ public class Main {
         b = scanner.nextInt();
         a = Math.abs(a);
         b = Math.abs(b);
-        if (a == 0 || b == 0) {
+        if (a == 0 && b == 0) {
             System.out.println("2 số không có ước chung lớn nhất.");
+        } else if (a == 0) {
+            System.out.println("Ước chung lớn nhất là " + b);
+        } else if (b == 0) {
+            System.out.println("Ước chung lớn nhất là " + a);
+        } else if (a == b) {
+            System.out.println("Ước chung lớn nhất là " + a);
+        } else {
+            while (a != b) {
+                if (a > b)
+                    a = a - b;
+                else
+                    b = b - a;
+            }
+            System.out.println("Ước chung lớn nhất là " + a);
         }
-        while (a != b) {
-            if (a > b)
-                a = a - b;
-            else
-                b = b - a;
-        }
-        System.out.println("Ước chung lớn nhất là " + a);
     }
 }
